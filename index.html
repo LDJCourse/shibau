@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shibua</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript">
+      document.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
+      });
+
+      document
+        .getElementById("copyButton")
+        .addEventListener("click", function () {
+          const copyText = document.getElementById("copyText").innerText;
+          navigator.clipboard
+            .writeText(copyText)
+            .then(function () {
+              alert("Text copied to clipboard!");
+            })
+            .catch(function (error) {
+              alert("Failed to copy text: " + error);
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>$Shibua</h1>
+      <img src="/images/shibuapfp.webp" class="pfpimg" alt="" />
+      <div class="logo_container">
+        <a href="">
+          <img src="/images/xlogo.png" alt="" />
+        </a>
+        <a href="">
+          <img src="/images/telegramlogo.png" alt="" />
+        </a>
+        <a href="">
+          <img src="/images/dexscreenerlogo.png" alt="" />
+        </a>
+      </div>
+      <p id="copyButton">CA: XXXXXXXXXXXXXXXXXX</p>
+    </div>
+  </body>
+</html>
